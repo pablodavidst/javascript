@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+        <title>Curso de Javascript</title>
+        
+	</head>
+	<body>
+        <div class="container">
+            <div class="jumbotron">
+                    <h1 class="bg-primary text-center">Pago de la compra</h1>
+                    <b>Fecha:</b><span id="fecha"></span><b>Hora:</b><span id="hora"></span>
+                    <hr>
+
+                    <br>
+                    <ul>
+                        <li>SUB-TOTAL: <span id="subtotal"></span></li>
+                        <li>RECARGO: <span id="recargo"></span></li>
+                        <li>DESCUENTO: <span id="descuento"></span></li>
+                        <li>CUOTAS: <span id="cuotas"></span></li>
+                        <li>TIPO DE PAGO: <span id="tipo"></span></li>
+                    </ul>
+                    <hr>
+
+                    <h2 class="bg-info text-left">TOTAL A PAGAR: <span id="total"></span></h1>                        
+            </div>
+
+        </div>
+
+    <script>
+
+        var fechaActual = new Date();
+
+        var anio = fechaActual.getFullYear();
+        var mes = fechaActual.getMonth() + 1;
+        var dia = fechaActual.getDate();
+
+        document.getElementById('fecha').innerHTML = dia + '/' + mes + '/' + anio;
+
+        var hora = fechaActual.getHours();
+        var minuto = fechaActual.getMinutes();
+        var segundo = fechaActual.getSeconds();
+
+        document.getElementById('hora').innerHTML = hora + ':' + minuto + ':' + segundo;
+        
+        //var importe = parseFloat(prompt('ingrese el importe'));
+
+        var importe = prompt('ingrese el importe');
+
+        importe = parseFloat(importe);
+
+        document.getElementById('subtotal').innerHTML = importe.toFixed(2);
+
+        var descuento = importe * 0.02;
+
+        var recargo = importe * 0.01;
+
+        document.getElementById('descuento').innerHTML = descuento.toFixed(2);
+
+        document.getElementById('recargo').innerHTML = recargo.toFixed(2);
+
+        document.getElementById('cuotas').innerHTML = 1;
+
+        document.getElementById('tipo').innerHTML = 'Contado';
+
+        var total = importe + recargo - descuento;
+
+        document.getElementById('total').innerHTML = total.toFixed(2);
+
+    </script>
+    
+</body>   
+</html>
