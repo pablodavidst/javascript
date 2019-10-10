@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Curso de Javascript</title>
+		<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+	</head>
+	<body>
+		<h3 style="background-color:gold;text-align: center">Curso de programación con javascript</h3>
+		<!--<div id="pesos">
+				<i class="fas fa-cat fa-3x"></i>
+				<i class="fas fa-dog fa-3x"></i>
+				<i class="fas fa-frog fa-3x"></i>
+
+		</div>
+		-->
+		<script>
+
+		/*	
+			var fecha = new Date();
+			var dia = fecha.getDay();
+
+			switch(dia)
+			{
+				case 0: 
+					document.write('Hoy es Domingo');
+					break;
+
+				case 1: 
+					document.write('Hoy es Lunes');
+					break;
+
+				case 2: 
+					document.write('Hoy es Martes');
+					break;		
+					
+				case 3: 
+				document.write('Hoy es Miércoles');
+				break;	
+
+				default:
+					document.write( 'Hoy no es ni Dom, ni lun, ni martes, ni miércoles, el día es ' + dia);
+
+			}
+			
+			var opcion = prompt('Elija una opción del 1 al 3')
+
+			switch(opcion)
+			{
+				case '1': 
+					document.write('<i class="fas fa-dog fa-3x"></i>');
+					break;
+
+				case '2': 
+					document.write('<i class="fas fa-cat fa-3x"></i>');
+					break;
+
+				case '3': 
+					break;
+				default:
+					alert('La opción seleccionada es incorrecta')						
+			}	
+			*/	
+
+			/*for(var i=500; i<591;i++)
+			{
+
+			}
+*/
+
+	/*	var continuar = confirm('Desea comenzar?');
+		var contador = 0;
+
+		while(continuar==true)
+			{
+				for (var i=0;i<contador + 1;i++)
+					{
+						document.write('<i class="fas fa-cat fa-3x"></i>');
+					}
+
+				contador++;
+				document.write('<br>'); 	
+				continuar = confirm('Desea continuar?');
+			}
+*/
+
+/*
+		var autos = ['Ford','Audi','Citroen','Toyota','Peugeot']
+		var ejemplo =[true,'texto',10.5,null,false,55]
+
+		document.write('El array autos tiene ' + autos.length + ' elementos')
+
+		var persona = 
+		{
+			nombre:'Pablo',
+			apellido:'Stolarczuk',
+			edad:45,
+			fecha:'10/10/2019',
+			tieneRegistro:true,
+			cursos:['javascript','php','.net'],
+			casado:null,
+			padre:{nombre:'Jorge',apellido:'Stolarczuk',cursos:['react.js']}
+		}
+		
+		document.write('<br>')
+		document.write(persona.apellido + ', ' + persona.nombre)
+
+		var listado = [{nombre:'Pablo',apellido:'Stolarczuk',edad:45},
+						{nombre:'Ezequiel',apellido:'Stolarczuk',edad:42},
+						{nombre:'Gustavo',apellido:'Stolarczuk',edad:38}
+					]
+				
+		
+		for(var i=0;i<listado.length;i++)
+			{
+				console.log(listado[i].nombre)
+			}
+
+		console.log(autos)
+
+		//ordenar un vector
+
+		console.log(autos.sort())
+
+		// dar vuelta el vector
+
+		console.log(autos.reverse())
+
+		// agregar un auto nuevo al principio
+
+		autos.unshift('Renault')
+
+		console.log(autos)
+
+	// agregar un auto nuevo al final
+
+		autos.push('Chrevrolet')
+
+		console.log(autos)
+
+	// borrar un auto al principio
+
+	autos.shift()
+
+	console.log(autos)
+
+	// borrar un auto nuevo al final
+
+	autos.pop()
+
+	console.log(autos)
+
+	// borrar todos los elementos a partir de una posición
+
+	autos.splice(3)
+
+	// borrar 1 elemento a partir de una posición
+
+	autos.splice(1,1)
+
+	// borrar un elemento y agregar uno nuevo
+
+	autos.splice(2,1,'Auto nuevo')
+
+	// agregar un nuevo auto en la posición 2 sin borrar nada
+
+	autos.splice(2,0,'Otro auto nuevo')
+
+	var frutas=['manzana','naranja','pera']
+
+	var nuevoVector = autos.concat(frutas);
+
+	console.log(nuevoVector)
+
+*/
+
+		var vector = [50,80,95]
+
+		document.write(vector);
+		document.write('<br>');
+
+		vector.push(1510)
+
+		alert('El nuevo dato es ' + vector[vector.length-1]);
+
+		var datoNuevo = prompt('Ingrese otro dato')
+
+		vector.push(datoNuevo)
+
+		document.write(vector);
+		document.write('<br>');
+
+
+		var empleados = [
+						{nombre:'Pablo',apellido:'Stolarczuk',edad:45},
+						{nombre:'Ezequiel',apellido:'Stolarczuk',edad:42},
+						{nombre:'Gustavo',apellido:'Stolarczuk',edad:38}
+					]
+
+		for (var i=0; i<empleados.length;i++)
+		{
+			document.write(empleados[i].nombre)
+			document.write(empleados[i].apellido)
+			document.write(empleados[i].edad)
+
+		}
+
+		</script>
+	</body>
+</html>
+
