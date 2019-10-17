@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <title>Curso de Javascript</title>
+        
+        <style>
+             .bes{
+                display:table-cell;
+                width: 70px;
+            }
+        </style>
+	</head>
+<body>
+
+    <div id="caja"></div>
+    <button onclick="mostrarColor(this)">Blue</button>
+    <button onclick="mostrarColor(this)">Red</button>
+    <button onclick="mostrarColor(this)">Green</button>
+    <button onclick="mostrarColor(this)">Pink</button>
+
+</body>
+
+<script>
+
+function mostrarColor(boton){
+    //alert(boton.innerHTML)
+
+    document.getElementById('caja').innerHTML = 'El color es ' + boton.innerHTML
+    document.getElementById('caja').style.background = boton.innerHTML;
+}
+
+</script>
+</html>    
