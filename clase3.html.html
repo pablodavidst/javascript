@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+        <title>Proyecto integrador</title>
+        
+        <style>
+            .bes{
+                display:table-cell;
+                width: 70px;
+            }
+        </style>
+	</head>
+	
+	<h1 id="mensaje"></h1>
+
+    <div id="tabla">
+
+    </div>
+    
+	<body>
+
+<script> 
+	
+	var rol = prompt('Ingrese su rol');
+	
+	if (rol =='admin' || rol=='recursos')
+	{
+		var clave = prompt('Cuál es su clave?');
+		
+		if (clave=='1234')
+		{
+			var usuario = prompt('Cuál es su nombre de usuario?');
+			
+			document.getElementById('mensaje').innerHTML = 'Hola ' + usuario + ' bienvenido a nuestra aplicación';
+            
+            var empleados = 
+            [
+                {nombre:'Juan',apellido:'Pedro',edad:40},
+                {nombre:'Ana',apellido:'Garcia',edad:25},
+                {nombre:'María',apellido:'Zarate',edad:34}
+            ]	
+    
+        var detalle='';
+        
+           
+        for (var i=0;i<empleados.length;i++)
+        {
+            detalle = detalle + `
+                <div>
+                        <p class="bes">${empleados[i].nombre}</p>
+                        <p class="bes">${empleados[i].apellido}</p>
+                        <p class="bes">${empleados[i].edad}</p>
+                </div>    
+            `
+        }
+
+        document.getElementById("tabla").innerHTML = detalle;
+
+		}
+		else
+		{
+			document.write ('Ha habido un error, consulte a su supervisor rol y contraseñas correctas');
+		}
+	
+	}
+	else 
+	{
+        document.write ('Ha habido un error, consulte a su supervisor rol y contraseñas correctas');
+	}
+</script>
+		
+	</body>
+</html>
+
