@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <title>Curso de Javascript</title>
+        
+        <style>
+             .bes{
+                display:table-cell;
+                width: 70px;
+            }
+        </style>
+	</head>
+<body>
+        <h3 style="background-color:gold;text-align: center">Calculadora</h3>
+        
+<!--
+        <h1 id="ejemplo"></h1>
+
+        <h2 id="fecha"></h2>
+
+        <div onmouseout="limpiarAlerta()" onmousemove="mostrarAlerta()" id="eventos" class="bg-primary">
+            <input type="text" onblur="limpiarAlerta()" oninput="console.log('Hizo input')" onfocus="mostrarAlerta()" >
+            <button onclick="cambiarColor()">Click</button>
+            <br>
+            <span id="alerta"></span>
+        </div>
+-->
+
+    <div style="width:300px;margin-left:auto;margin-right:auto;text-align: center" class="bg-warning">
+        <hr>
+        <input type="number" id="num1">
+        <input type="number" id="num2">
+        <br>
+        <hr>
+        <button onclick="calculadora('+')">+</button>
+        <button onclick="calculadora('-')">-</button>
+        <button onclick="calculadora('*')">*</button>
+        <button onclick="calculadora('/')">/</button>
+        <br>
+        <hr>
+        <span>=</span><span id="resultado"></span>
+
+    </div>
+<script>
+
+    //mostrarMensaje();
+
+
+    function calculadora(operacion){
+        var num1 = document.getElementById('num1').value;
+        var num2 = document.getElementById('num2').value;
+
+        var resultado = 0;
+
+        num1 = parseFloat(num1);
+        num2 = parseFloat(num2);
+
+        document.getElementById('resultado').innerHTML= '';
+
+        switch(operacion){
+            case '+':
+                resultado = num1 + num2;
+                break;
+            case '-':
+                resultado = num1 - num2;
+                break;
+            case '*':
+                resultado = num1 * num2;
+                break;
+            case '/':
+                if (num2==0){
+                    alerta('División por cero no permitida')
+                    resultado = 0;
+                }else{
+                    resultado = num1/num2;
+                }
+        }
+
+        document.getElementById('resultado').innerHTML= resultado.toFixed(2);
+    }
+
+    function mostrarMensaje()
+    {
+        alert('Soy una función')
+    }
+
+    function ejemploOnBlur(param){
+        if (param.value==''){
+            alert('Por favor ingrese un valor')
+        }
+    }
+
+    function mostrarAlerta(){
+        document.getElementById('alerta').innerHTML = 'Ingrese su nombre'
+    }
+
+    function limpiarAlerta(){
+        document.getElementById('alerta').innerHTML = ''
+    }
+
+    function ejemplo(){
+        return 'Soy un ejemplo'
+    }
+
+    function suma(num1=0,num2=0)
+    {
+        return num1 + num2;
+    }
+
+    function suma50(num){
+
+        return num + incremento;
+    }
+
+    function mostrarFecha()
+    {
+        var fecha = new Date();
+
+        //return fecha.getHours()+':'+fecha.getMinutes()+':'+fecha.getSeconds();
+        return `${fecha.getHours()}:
+                ${fecha.getMinutes()}:
+                ${fecha.getSeconds()}`
+    }
+
+    function mostrarFecha2(formatoArgentino=true)
+    {
+        var fecha = new Date();
+
+        if (formatoArgentino){
+            return `${fecha.getHours()}:${fecha.getMinutes()}:${fecha.getSeconds()}`
+        }else{
+            return `${fecha.getHours()}**${fecha.getMinutes()}**${fecha.getSeconds()}`          
+        }
+    }
+
+    function cambiarColor(){
+        document.getElementById('eventos').removeClass = 'bg-primary'
+    }
+
+    /*alert(ejemplo());
+
+    document.write(ejemplo());
+
+    var numero_1 = 500;
+
+    var numero_2 = 25;
+
+    document.getElementById('ejemplo').innerHTML= suma(numero_1,numero_2);
+*/
+    //document.getElementById('fecha').innerHTML= mostrarFecha2(false);
+
+
+</script>        
+
+</body>
+</html>
