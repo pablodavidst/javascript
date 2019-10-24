@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+       
+        <!-- <script src="jquery.js"></script> -->
+
+        <title>Ejercicio integrador final</title>
+        
+        <style>
+ 
+            td, th{
+                border:solid 1px
+            }
+
+            .error{
+                border: solid 1px red
+            }
+
+        </style>
+	</head>
+<body>
+
+    <div class="container-fluid">
+        <div class="jumbotron">       
+            
+            <h1 id="mensaje"></h1>
+            <hr>
+		
+            <div id="marcoTabla" class="marco"> 
+                <table>
+                    <tr>
+                        <td>Nombre</td>
+                        <td><input id="nombre" type="text"></td>
+                        <td style="border:none"><span id="m-nombre"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Apellido</td>
+                        <td><input id="apellido" type="text"></td>
+                        <td style="border:none"><span id="m-apellido"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Edad</td>
+                        <td><input id="edad" type="number"></td>
+                        <td style="border:none"><span id="m-edad"></span></td>
+                    </tr>
+                </table>
+
+                <br>
+
+                <button onclick="agregar()">Agregar</button>
+            </div>
+
+            <hr>
+
+            <table id="listado">
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+
+</body>
+
+<script>
+
+$("#nombre").mouseenter(function(){
+        mostrarMensaje(1);
+})
+
+$("#apellido").mouseenter(function(){
+        mostrarMensaje(2);
+})
+
+$("#edad").mouseenter(function(){
+        mostrarMensaje(3);
+})
+
+$("#nombre").mouseleave(function(){
+        ocultarMensaje(1);
+})
+
+$("#apellido").mouseleave(function(){
+    ocultarMensaje(2);
+})
+
+$("#edad").mouseleave(function(){
+    ocultarMensaje(3);
+})
+
+function mostrarMensaje(numero){
+
+    if (numero==1){
+        $("#m-nombre").text("Ingrese el nombre")
+    }else if (numero==2){
+        $("#m-apellido").text("Ingrese el apellido")
+    }else{
+        $("#m-edad").text("Ingrese la edad")
+    }
+}
+
+function ocultarMensaje(numero){
+    if (numero==1){
+        $("#m-nombre").text("")
+    }else if (numero==2){
+        $("#m-apellido").text("")
+    }else{
+        $("#m-edad").text("")
+    }
+}
+
+function agregar(){
+
+    var nombre = $("#nombre").val();
+    var apellido = $("#apellido").val();
+    var edad = $("#edad").val();
+
+    if (nombre=='' || apellido=='' || edad=='')
+    {
+        $("#mensaje").text("Error, uno de los datos es vacío")
+
+        $("input").removeClass('error')
+
+        if(nombre==''){
+            $("#nombre").addClass('error')
+        }
+
+        if(apellido==''){
+            $("#apellido").addClass('error')
+        }
+        
+        if(edad==''){
+            $("#edad").addClass('error')
+        }
+
+    }else{
+        var fila = `
+        <tr>
+            <th>${nombre}</th>
+            <th>${apellido}</th>
+            <th>${edad}</th>
+        </tr>    
+    `
+    $("#listado").append(fila)
+    }
+
+    
+}
+</script>
+</html>    
