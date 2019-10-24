@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+       
+        <!-- <script src="jquery.js"></script> -->
+
+        <title>Curso de Javascript</title>
+        
+        <style>
+             .bes{
+                display:table-cell;
+                width: 70px;
+            }
+
+            .uno{
+                background-color: aqua
+            }
+
+            .dos{
+                background-color: brown
+            }
+
+            td, th{
+                border:solid 1px
+            }
+
+            .marco{
+                border:solid 1px
+            }
+
+        </style>
+	</head>
+<body>
+
+    <div class="container-fluid">
+        <div class="jumbotron">       
+            
+            <h1 id="titulo">Ejercicio integrador</h1>
+            <hr>
+		
+            <div id="caja"></div>
+        
+            <button onclick="mostrarColor(this)">Blue</button>
+            <button onclick="mostrarColor(this)">Red</button>
+            <button onclick="mostrarColor(this)">Green</button>
+            <button onclick="mostrarColor(this)">Pink</button>
+
+            <hr>
+
+            <div id="marcoTabla" class="marco"> algo de prueba
+                <table>
+                    <tr>
+                        <td>Nombre</td>
+                        <td><input id="nombre" type="text" value="algo"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Apellido</td>
+                        <td><input id="apellido" type="text"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Edad</td>
+                        <td><input id="edad" type="number"></td>
+                        <td></td>
+                    </tr>
+                </table>
+
+                <br>
+
+                <button onclick="agregar()">Agregar</button>
+            </div>
+
+            <hr>
+
+            <button onclick="mostrarLista()">Mostrar Empleados</button>
+
+            <hr>
+
+            <table id="listado">
+
+            </table>
+
+            <hr>
+
+            <button id="ejemplo1">Ejemplo 1</button>
+
+            <button id="foco">Hacer foco</button>
+
+            <button id="seleccionar">Seleccionar</button>
+
+            <button onclick="aparecer()">Aparecer</button>
+
+            <button onclick="desaparecer()">Desaparecer</button>
+
+            <button onclick="hacertoggle()">Toggle</button>
+
+            <button onclick="hacerfadein()">Fade in</button>
+
+            <button onclick="hacerfadeout()">Fade out</button>
+
+            <button onclick="hacerfadetoggle()">Fade Toggle</button>
+
+            <button onclick="hacerappend()">Append</button>
+
+            <button onclick="hacerprepend()">Prepend</button>
+
+            <button onclick="hacerafter()">After</button>
+
+            <button onclick="hacerbefore()">Before</button>
+
+            <button onclick="vaciar()">Vaciar</button>
+
+            <button onclick="remover()">Remover</button>
+
+        </div>
+
+    </div>
+
+
+
+</body>
+
+<script>
+
+// agregar eventos a elementos html por ejemplo un botón, un input, un div ...etc
+
+$("#ejemplo1").click(ejemplo2)
+$("#nombre").focus(ejemplo2)
+//$("#nombre").blur(ejemplo3)
+$("#nombre").change(ejemplo4)
+//$("table").hover(ejemplo5)
+$("table").mouseenter(ejemplo5)
+$("table").mouseleave(ejemplo6)
+
+$("#foco").dblclick(hacerfoco)
+$("#seleccionar").dblclick(seleccionar)
+
+var empleados = [
+		{nombre:'Juan',apellido:'Pedro',edad:40},
+		{nombre:'Ana',apellido:'Garcia',edad:25},
+		{nombre:'María',apellido:'Zarate',edad:34}
+    ]	
+
+function hacerappend(){
+    $("#marcoTabla").append('<i class="fa fa-star"></i>')
+} 
+
+function hacerprepend(){
+    $("#marcoTabla").prepend('<i class="fa fa-star"></i>')
+}  
+
+function hacerbefore(){
+    $("#marcoTabla").before('<i class="fa fa-star"></i>')
+}   
+
+function hacerafter(){
+    $("#marcoTabla").after('<i class="fa fa-star"></i>')
+} 
+
+function vaciar(){
+    $("#marcoTabla").empty()
+}  
+
+function remover(){
+    $("#marcoTabla").remove()
+}  
+
+function hacerfoco(){
+    $("#nombre").focus();
+}
+
+function hacerfadein(){
+    $("#titulo").fadeIn();
+}
+
+function hacerfadeout(){
+    $("#titulo").fadeOut();
+}
+
+function hacerfadetoggle(){
+    $("#titulo").fadeToggle(3000);
+}
+
+function aparecer(){
+    $("#titulo").show(10000)
+}
+
+function hacertoggle(){
+    $("#titulo").toggle()
+}
+
+function desaparecer(){
+    $("#titulo").hide(5000)
+}
+
+function seleccionar(){
+    $("#nombre").select();
+}
+
+function ejemplo1(){
+    alert("Esto es un ejemplo")
+}
+
+function ejemplo2(){
+    // obtengo el texto 
+    var titulo = $("#titulo").text();
+
+    // modifico el texto agregando la palabra 'prueba' al texto original
+    $("#titulo").text(titulo + "prueba")
+}
+
+function ejemplo3(){
+    // modifico el texto
+    $("#titulo").text("Se perdió el foco")
+}
+
+function ejemplo4(){
+
+    // obtengo el valor del input Nombre
+    var valor = $("#nombre").val();
+
+   // escribo el valor del input Nombre en el texto del título
+
+    $("#titulo").text(valor)
+}
+
+function ejemplo5(){
+
+    // quito la clase 'dos' del título
+    $("#titulo").removeClass("dos")
+    // agrego la clase 'uno' al título
+    $("#titulo").addClass("uno")
+    // modifico estilos del título
+    $("#titulo").css("font-size","50px")
+    $("#titulo").css("color","violet")
+}
+
+function ejemplo6(){
+    // quito la clase 'uno' del título
+   $("#titulo").removeClass("uno")
+    // agrego la clase 'dos' al título
+   $("#titulo").addClass("dos")
+    // modifico estilos del título
+   $("#titulo").css("font-size","100px")
+   $("#titulo").css("color","white")
+}
+
+function mostrarColor(boton){
+
+    console.log(boton)
+    //alert(boton.innerHTML)
+    document.getElementById('caja').innerHTML = 'El color es ' + boton.innerHTML
+    document.getElementById('caja').style.background = boton.innerHTML;
+}
+
+function agregar(){
+
+    var nombre = document.getElementById('nombre').value;
+    var apellido = document.getElementById('apellido').value;
+    var edad = document.getElementById('edad').value;
+
+  /*  var nuevoEmpleado = {nombre:nombre,apellido:apellido,edad:edad}
+
+    empleados.push(nuevoEmpleado);
+*/
+    empleados.push({nombre:nombre,apellido:apellido,edad:edad})
+
+    mostrarLista();    
+}
+
+function mostrarLista(){
+    var html='';
+    var fila ='';
+
+    document.getElementById("listado").innerHTML="";
+
+    fila =  `
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Edad</th>
+            </tr>    
+        `
+
+    html = html + fila;
+
+
+    for (i=0;i<empleados.length;i++){
+
+        fila =  `
+            <tr>
+                <td>${empleados[i].nombre}</td>
+                <td>${empleados[i].apellido}</td>
+                <td>${empleados[i].edad}</td>
+            </tr>    
+        `
+        html = html + fila;
+    }
+
+    document.getElementById("listado").innerHTML=html;
+}
+
+</script>
+</html>    
